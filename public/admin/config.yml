@@ -1,10 +1,10 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  branch: main #adding_decap2 #
   repo: HusainMkd/AstroAccountantsLondon # change this to your repo
   site_domain: www-auroraaccountantslondon.netlify.app # change this to your domain
   base_url: https://www-auroraaccountantslondon.netlify.app/ # change this to your prod URL
-  auth_endpoint: oauth # the oauth route provided by the integration
+  auth_endpoint: admin/oauth/callback #https://www-auroraaccountantslondon.netlify.app/admin/oauth/callback # the oauth route provided by the integration
 
 media_folder: 'src/assets/images'
 public_folder: '/assets/images'

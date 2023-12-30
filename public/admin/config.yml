@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway   #github
   branch: main #adding_decap2 #
   repo: HusainMkd/AstroAccountantsLondon # change this to your repo
   site_domain: www-auroraaccountantslondon.netlify.app # change this to your domain

@@ -1,0 +1,33 @@
+name: opencode
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  opencode:
+    if: |
+      contains(github.event.comment.body, '/oc') ||
+      contains(github.event.comment.body, '/opencode')
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Antigravity Auth
+        run: |
+          mkdir -p ~/.config/opencode
+          echo '${{ secrets.ANTIGRAVITY_ACCOUNTS }}' > ~/.config/opencode/antigravity-accounts.json
+
+      - name: Run OpenCode
+        uses: anomalyco/opencode/github@latest
+        with:
+          model: google/antigravity-claude-opus-4-5-thinking-medium

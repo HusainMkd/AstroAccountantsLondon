@@ -13,12 +13,14 @@
     "lint:eslint": "eslint . --ext .js,.ts,.astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^4.0.2",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.3",
     "@astrolib/analytics": "^0.5.0",
     "@astrolib/seo": "^1.0.0-beta.5",
     "@fontsource-variable/inter": "^5.0.16",
     "astro": "^4.0.6",
+    "astro-decap-cms-oauth": "^0.2.9",
     "astro-icon": "1.0.0-next.2",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
